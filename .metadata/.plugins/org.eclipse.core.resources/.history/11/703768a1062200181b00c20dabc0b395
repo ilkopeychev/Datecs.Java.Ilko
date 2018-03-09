@@ -1,0 +1,29 @@
+
+public class Bitwize {
+
+	static int checkBitFor1(int n) {
+		{
+			{
+				int count = 0;
+				while (n > 0) {
+					if((count += n & 1)==1) {
+						return 1;
+					} else {
+						count += n & 1;
+						n >>= 1;
+					}
+				
+				}
+				return 0;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		for (int i = 0; i <16; i++) {
+			System.out.println(checkBitFor1(i));	
+		}
+
+		
+	}
+}

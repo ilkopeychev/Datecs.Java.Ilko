@@ -1,0 +1,29 @@
+package hardTasks;
+
+public class BubleSort {
+	public static void main(String[] args) {
+		int num[] = { 6, 82, 12, 41, 41, 59, -32, 61 };
+	}
+
+	public static void BubbleSort(int num[]) {
+		// повтаряме толкова колкото са елементите
+		for (int i = 0; i < num.length; i++) {
+			// проверка дали имаме размяна
+			boolean hasSwap = false;
+			// вътрешния го въртим от първи до последния елемент минус завъртанията на
+			// горния цикъл
+			for (int j = 0; j < num.length - 1 - i; j++) {
+				if (num[j] > num[j + 1]) {
+					int temp = num[j];
+					num[j] = num[j + 1];
+					num[j + 1] = temp;
+					// масива още не е сортиран(ще бъде когато няма размяна)
+					hasSwap=true;
+				}
+			}
+			if (!hasSwap) {
+				break;
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+
+public class Task1 {
+	public static void main(String[] args) {
+		for (int rows = 0; rows <= 5; rows++) {
+			for (int j = 4-rows; j >= 0; j--) {
+				System.out.print(" ");
+			}
+			for (int k = rows+1; k <=rows*2; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+	}
+}

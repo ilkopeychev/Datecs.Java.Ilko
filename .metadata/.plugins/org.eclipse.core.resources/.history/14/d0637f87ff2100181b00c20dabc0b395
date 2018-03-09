@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Bitwize {
+public static int checkBitFor1(int digit) {
+	
+	for (int i = 0; i < 16; i++) {
+		
+	}
+	if ((digit & 1) == 1) {
+	     return 1;
+	}
+	else {
+	   checkBitFor1(digit<<1);
+	}
+	return 0;
+}
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int digit=sc.nextInt();
+	System.out.println(checkBitFor1(digit));
+}
+}

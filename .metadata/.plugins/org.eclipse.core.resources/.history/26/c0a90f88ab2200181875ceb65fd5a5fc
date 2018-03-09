@@ -1,0 +1,33 @@
+import java.util.HashMap;
+
+public class taks9FrequencyAnalysis {
+public static void main(String[] args) {
+	String alphabet="abcdefghijklmnopqrstuvwxyz";
+	HashMap<Character,Integer> map = new HashMap<Character,Integer>();          
+	String input = "aasjjikkk";
+	for(int i = 0; i < input.length(); i++){
+	   char c = input.charAt(i);
+	   Integer val = map.get(c);
+	   if(val != null){
+	     map.put(c, new Integer(val + 1));
+	   }else{
+	     map.put(c,1);
+	   }
+	}
+	StringBuilder ouputHelper= new StringBuilder();
+	
+	for (int i = 0; i < input.length(); i++) {
+//		boolean isCharHere=false;
+		if (map.get(input.charAt(i))!=null) {
+			for (int j = 0; j < ouputHelper.length(); j++) {
+				if (input.charAt(i)==ouputHelper.charAt(j)) {
+					continue;
+				} else {
+					System.out.println(map.get(input.charAt(i)));
+				}
+			}
+		}
+	}
+	
+}
+}

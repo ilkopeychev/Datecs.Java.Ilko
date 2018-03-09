@@ -1,0 +1,12 @@
+
+public class Task1 {
+public static void main(String[] args) {
+	int result, num1=25, num2=40, num3=17, num4=5;
+	double fResult, vall=17.0, val2=12.78;
+	result=num1/num2;
+	fResult=num1/(double)num2;
+	System.out.println(result);
+System.out.println(fResult);
+
+}
+}

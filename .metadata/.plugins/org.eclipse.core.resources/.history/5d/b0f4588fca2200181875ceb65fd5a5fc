@@ -1,0 +1,35 @@
+package hardTasks;
+
+import javax.xml.soap.Node;
+
+public class BinaryTreeNode {
+
+	public static int findSecondLargestValueInBST(Node root)
+	     {
+	         int secondMax;
+	         Node pre = root;
+	         Node cur = root;
+	         while (cur.Right!= null)
+	         {
+	             pre = cur;
+	             cur = cur.Right;
+	         }
+	         if (cur.Left != null)
+	         {
+	             cur = cur.Left;
+	             while (cur.Right != null)
+	                 cur = cur.Right;
+	             secondMax = cur.Value;
+	         }
+	         else
+	         {
+	             if (cur == root && pre == root)
+	                 //Only one node in BST
+	                 secondMax = int.MinValue;
+	             else
+	                 secondMax = pre.Value;
+	         }
+	         return secondMax;
+	     }
+
+}

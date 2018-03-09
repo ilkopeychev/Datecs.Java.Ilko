@@ -1,0 +1,36 @@
+package hardTasks;
+
+public class Reactangles {
+	public int leftX;
+	public int bottomY;
+	public int width;
+	public int height;
+
+	public Reactangles(int leftX, int bottomY, int width, int height) {
+		super();
+		this.leftX = leftX;
+		this.bottomY = bottomY;
+		this.width = width;
+		this.height = height;
+	}
+
+	public static void main(String[] args) {
+		Reactangles triganalnik = new Reactangles(10, 20, 20, 10);
+		Reactangles triganalnik2 = new Reactangles(10, 20, 20, 10);
+		int outputwidth=0;
+		int outputheight=0;
+		// opredelqne na usloviqta za presichane x + width > x1 y+ height > y1..
+		if (((triganalnik.leftX + triganalnik.width > triganalnik2.leftX)
+				|| (triganalnik2.leftX + triganalnik2.width > triganalnik.leftX))
+				&& ((triganalnik.bottomY + triganalnik.height > triganalnik2.bottomY)
+						|| triganalnik2.bottomY + triganalnik2.height > triganalnik.bottomY)) {
+
+				outputwidth = triganalnik.leftX + triganalnik.width - triganalnik2.leftX;
+				outputheight = triganalnik.bottomY + triganalnik.height - triganalnik2.bottomY;
+		
+		} else {
+			System.out.println(" ne se presichat pravougalnicite ");
+		}
+System.out.println(outputheight*outputwidth);
+	}
+}

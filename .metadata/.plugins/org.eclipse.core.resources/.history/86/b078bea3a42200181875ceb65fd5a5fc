@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class cezarovShifarTask8 {
+	public static void main(String[] args) {
+		// taking the alphabet for helper
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+		Scanner sc = new Scanner(System.in);
+		String userMessage = sc.nextLine();
+		userMessage.toLowerCase();
+		StringBuilder output = new StringBuilder();
+		for (int i = 0; i < userMessage.length(); i++) {
+			// i should add all the symbols
+			if (userMessage.charAt(i) == ',' || userMessage.charAt(i) == ' ' || userMessage.charAt(i) == '.') {
+				output.append(userMessage.charAt(i));
+			} else {
+				for (int alphaIterator = 0; alphaIterator < alphabet.length(); alphaIterator++) {
+					if (alphaIterator == 25) {
+						output.append('a');
+					} else {
+						if ((userMessage.charAt(i) == alphabet.charAt(alphaIterator))) {
+							output.append(alphabet.charAt(alphaIterator + 1));
+						}
+
+					}
+				}
+			}
+		}
+		System.out.println(output.toString());
+	}
+}

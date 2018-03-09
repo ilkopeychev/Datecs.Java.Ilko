@@ -1,0 +1,18 @@
+
+public class Bitwize {
+	public static int checkBitFor1(int digit) {
+		for (int i = 0; i < 16; i++) {
+			if ((digit & (1 << i)) == 1) {
+				return 1;
+			} 
+		}
+		return 0;
+	}
+
+	
+
+	public static void main(String[] args) {
+
+		System.out.println(checkBitFor1(0));
+	}
+}

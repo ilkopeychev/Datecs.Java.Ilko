@@ -1,0 +1,10 @@
+
+public class Task6LeastSignificantByte {
+	// cheking the left side 
+	static boolean lsb_one(int x) {
+		  return ( (x & 0xffff) != 0 );
+		}
+	public static void main(String[] args) {
+		System.out.println(lsb_one(1536));
+	}
+}

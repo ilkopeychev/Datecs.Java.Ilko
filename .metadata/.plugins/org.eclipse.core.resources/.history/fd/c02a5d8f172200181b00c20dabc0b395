@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class task3CountMoney {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(" Vyvedete suma v leva ");
+		double money = 56.54;
+		int paperMoney=(int)money%100;
+
+		if (money / 50 > 0) {
+			System.out.println((int) money / 50 + " x " + 50);
+			money = (int) money / 50;
+		}
+		if (money / 20 > 0) {
+			System.out.println(money / 20 + " x " + 20);
+			money /= 20;
+		}
+		if (money / 10 > 0) {
+			System.out.println(money / 10 + " x " + 10);
+			money /= 10;
+		}
+		if (money / 5 > 0) {
+			System.out.println(money / 5 + " x " + 5);
+			money /= 5;
+		}
+		if (money / 2 > 0) {
+			System.out.println(money / 2 + " x " + 2);
+			money /= 2;
+		}
+		if (money / 2 > 0) {
+			System.out.println(money / 2 + " x " + 2);
+			money /= 2;
+		}
+		if (money / 1 > 0) {
+			System.out.println(money + " x " + 1);
+			money -= 1;
+		}
+		System.out.println(money);
+		System.out.println(paperMoney);
+	}
+}

@@ -1,0 +1,104 @@
+package hardTasks;
+
+public class Link {
+	public String employeName;
+	public int salary;
+
+	public Link next;
+
+	public Link(String employeName, int salary) {
+		super();
+		this.employeName = employeName;
+		this.salary = salary;
+	}
+
+	public static void main(String[] args) {
+		LinkList theLinkList = new LinkLis t();
+		theLinkList.insertFirstLink("ILKO", 100);
+		theLinkList.insertFirstLink("gosho", 110);
+		theLinkList.insertFirstLink("tosho", 120);
+	}
+
+	public void display() {
+		System.out.println(employeName + ": " + salary + " $");
+	}
+
+	public String toString() {
+		return employeName;
+	}
+
+	class LinkList {
+		public Link firstlink;
+
+		public LinkList() {
+			firstlink = null;
+		}
+
+		public boolean isEmpty() {
+			return (firstlink == null);
+		}
+
+		public void insertFirstLink(String emplname, int salary) {
+			Link newlink = new Link(emplname, salary);
+			newlink.next = firstlink;
+			firstlink = newlink;
+		}
+
+		public Link removeFirst() {
+			Link linkReference = firstlink;
+			if (!isEmpty()) {
+				firstlink = firstlink.next;
+
+			} else {
+				System.out.println(" Empty list");
+			}
+			return linkReference;
+		}
+
+		public void display() {
+			Link theLink = firstlink;
+			while (theLink != null) {
+				theLink.display();
+				System.out.println("Next link" + theLink.next);
+				theLink = theLink.next;
+				System.out.println();
+			}
+		}
+
+		public Link find(String employeename) {
+			Link theLink = firstlink;
+			if (!isEmpty()) {
+				while (theLink.employeName != employeename) {
+					if (theLink.next == null) {
+						return null;
+					} else {
+						theLink = theLink.next;
+					}
+				}
+			} else {
+				System.out.println(" it Empty");
+			}
+			return theLink;
+		}
+
+		public Link removeLink(String employeeName) {
+			Link currentLink = firstlink;
+			Link previousLink = firstlink;
+			while (currentLink.employeName != employeeName) {
+				if (currentLink.next == null) {
+					return null;
+				} else {
+					previousLink = currentLink;
+					currentLink = currentLink.next;
+				}
+			}
+			if (currentLink == firstlink) {
+				firstlink = firstlink.next;
+			} else {
+				previousLink = currentLink;
+			}
+			return currentLink;
+		}
+
+	}
+}
