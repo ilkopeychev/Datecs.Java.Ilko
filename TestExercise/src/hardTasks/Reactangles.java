@@ -15,8 +15,8 @@ public class Reactangles {
 	}
 
 	public static void main(String[] args) {
-		Reactangles triganalnik = new Reactangles(10, 20, 20, 10);
-		Reactangles triganalnik2 = new Reactangles(10, 20, 20, 10);
+		Reactangles triganalnik = new Reactangles(5, 15, 10, 20);
+		Reactangles triganalnik2 = new Reactangles(10, 5, 40, 5);
 		int outputwidth=0;
 		int outputheight=0;
 		// opredelqne na usloviqta za presichane x + width > x1 y+ height > y1..
